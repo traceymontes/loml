@@ -1,0 +1,70 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, #ff77a8, #5a99d8);
+    font-family: 'Times New Roman', Times, serif;
+    overflow: hidden;   
+}
+
+.navbar {
+    position: absolute;
+    top: 20px;
+    text-align: center;
+    z-index: 1; /* Ensure the navbar is on top */
+}
+
+.navbar a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ffccff;
+}
+
+.container {
+    position: relative;
+}
+
+h4 {
+    border: 2px solid #ff77a8; /* Pink border for headers */
+    padding: 10px; /* Space between text and border */
+    margin: 20px 0; /* Margin around the header */
+    border-radius: 5px; /* Rounded corners */
+
+}
+
+img {
+    width: 300px; 
+    transition: transform 0.2s;
+    cursor: grab; 
+    border-radius: 15px; 
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+.cursor {
+    position: absolute;
+    width: 20px; 
+    height: 20px; 
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%); 
+    transition: background-color 0.3s;
+}
+
+.border-effect {
+    border: 5px solid transparent;
+    border-image: linear-gradient(to right, #ff77a8, #5a99d8) 1;
+    transition: border 0.3s;
+    box-sizing: border-box;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="vid.css" rel="stylesheet">
+    <link rel="icon" href="img2.jpg" type="image/x-icon">
+    <title>Latrelle's ˏˋ°•*⁀➷</title>
+</head>
+<body>
+    <div class="navbar">
+        <a href="home.html">ˏˋ°•*⁀➷ </a>
+        <a href="hi.html">˖ ᡣ𐭩 ⊹ ࣪  ౨ৎ˚₊</a>
+    </div>
+    
+    <div class="container">
+        <video id="draggable" width="300" controls>
+            <source src="mp4.mp4" type="video/mp4">
+        </video>
+        <h4>Happy birthday, my Latrelle. I love you so muchhhhhhhh!!! </h4>
+    </div>
+    <div class="cursor" id="customCursor"></div>
+
+    <script>
+        const video = document.getElementById('draggable');
+        const customCursor = document.getElementById('customCursor');
+
+        let offsetX, offsetY;
+
+        video.addEventListener('mousedown', function(e) {
+            offsetX = e.clientX - video.getBoundingClientRect().left;
+            offsetY = e.clientY - video.getBoundingClientRect().top;
+
+            video.classList.toggle('border-effect'); // Toggle border effect on click
+            video.style.cursor = 'grabbing'; // Change cursor while dragging
+            document.addEventListener('mousemove', drag);
+            document.addEventListener('mouseup', drop);
+        });
+
+        function drag(e) {
+            video.style.left = (e.clientX - offsetX) + 'px';
+            video.style.top = (e.clientY - offsetY) + 'px';
+            if (e.clientX < offsetX - 50) { // Drag left threshold
+    window.location.href = "hi.html"; // Redirect to vid.html
+}
+        }
+
+        function drop() {
+            video.style.cursor = 'grab'; // Reset cursor after dragging
+            document.removeEventListener('mousemove', drag);
+            document.removeEventListener('mouseup', drop);
+        }
+
+        document.addEventListener('mousemove', function(e) {
+            customCursor.style.left = e.clientX + 'px';
+            customCursor.style.top = e.clientY + 'px';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <link rel="icon" href="img2.jpg" type="image/x-icon">
+    <title>Latrelle's ˏˋ°•*⁀➷</title>
+</head>
+
+<body>
+    <div class="container">
+        <a href="hi.html">
+            <img id="draggable" src="img1.jpg">
+        </a>
+        <h4>Happiest birthday, my love! Click the image or swipe left :></h4>
+        <h5> October 17, 2024 </h5>
+    </div>
+    <script>
+        const img = document.getElementById('draggable');
+
+        let offsetX, offsetY;
+
+        img.addEventListener('mousedown', function (e) {
+            offsetX = e.clientX - img.getBoundingClientRect().left;
+            offsetY = e.clientY - img.getBoundingClientRect().top;
+        });
+
+        function drag(e) {
+            img.style.left = (e.clientX - offsetX) + 'px';
+            img.style.top = (e.clientY - offsetY) + 'px';
+            if (e.clientX < 100) {
+                window.location.href = "hi.html"; // Redirect to hi.html
+            }
+        }
+
+        function drop() {
+            img.style.cursor = 'grab';
+            document.removeEventListener('mousemove', drag);
+            document.removeEventListener('mouseup', drop);
+
+        }
+        img.addEventListener('mousedown', function (e) {
+            offsetX = e.clientX - img.getBoundingClientRect().left;
+            offsetY = e.clientY - img.getBoundingClientRect().top;
+
+            img.classList.toggle('border-effect');
+            img.style.cursor = 'grabbing';
+            document.addEventListener('mousemove', drag);
+            document.addEventListener('mouseup', drop);
+        });
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, #ff77a8, #5a99d8);
+    font-family: 'Times New Roman', Times, serif;
+    overflow: hidden;   
+}
+
+.navbar {
+    position: absolute;
+    top: 20px;
+    text-align: center;
+    z-index: 1; /* Ensure the navbar is on top */
+}
+h4, h5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.navbar a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ffccff; /* Lighter color on hover */
+}
+
+.container {
+    position: relative;
+}
+
+video {
+    width: 950px; /* Adjust size as needed */
+    transition: transform 0.2s;
+    cursor: grab; 
+    border-radius: 15px; /* Rounded corners */
+}
+
+video:hover {
+    transform: scale(1.1);
+}
+
+.cursor {
+    position: absolute;
+    width: 20px; 
+    height: 20px; 
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%); 
+    transition: background-color 0.3s;
+}
+
+/* Border effect when clicked */
+.border-effect {
+    border: 5px solid transparent;
+    border-image: linear-gradient(to right, #ff77a8, #5a99d8) 1;
+    transition: border 0.3s;
+    box-sizing: border-box; /* Include border in size */
+}

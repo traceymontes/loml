@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hi.css">
+    <link rel="icon" href="img2.jpg" type="image/x-icon">
+    <title>Latrelle's ˏˋ°•*⁀➷</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="home.html">ˏˋ°•*⁀➷ </a>
+        <a href="vid.html">.° ༘🎧⋆🖇₊˚ෆ</a>
+    </div>
+
+    <div class="container">
+        <h4>Happiest 18th, my love!</h4>
+        <p>I know that this isn't much, but I know rin naman na maa-appreciate mo 'to. <br>
+            I just want to tell you how much I love you and how grateful I am that even for once, <br>
+            or for a lot na lmao, I got to know you. And, heck, I get to be with you. Isipin mo 'yun, <br>
+            yung crush ko lang dati, now is the reason I look forward to waking up every single day. <br>
+            Pero syempre super-mega-duper-forever crush parin kita hehe. That will never change.</p>
+        <h4>I know that it's not always easy,</h4>
+        <p>I say that naman palagi, especially sa mga letters ko sa'yo, be it written or via chat. <br>
+            But I hope you know na mahal na mahal kita. And I will keep on loving you for as much as I can.<br>
+            I know you would do the same rin naman. And I thank you for that. Thank you for loving me. Thank <br>
+            you for making me feel loved on days where i'm being a pain in the ass for you. Thank you for loving <br>
+            me on days where I wasn't the most perfect girlfriend that you deserve. Thank you for loving me extra <br>
+            on days where, even I, dpn't love myself. </p>
+        <p>My love, I want to apologize sa mga panahon on the days na mahina ako.</p>
+        <p>I know i'm the weak one in our relationship. I have to admit that to myself na napapagod talaga ako. <br>
+            And I don't blame myself for that. Lahat tayo napapagod. I know ikaw rin, may limit ka. We're both still
+            <br>
+            young, wala pa tayo masyadong idea what the future has ahead of us, but I hope whatever it is na nasa
+            future, <br>
+            sana nandun ka parin. Sana kasama parin kita. I hope we get the future that we've always dreamt of nang mag
+            kasama. <br>
+        <h4>Happy, happy, happyyyyyy birthday, my loveeeee!!!</h4>
+        <p>Here's to a lifetime for us to spend birthdays of each other. Ikaw lang gusto ko makasama na magb-blow ng
+            candle <br>
+            every birthday (or pwede naman hindi lang candle ang iblo- JOKE). but in all seriousness, I wish you the
+            happiest <br>
+            birthday. I love love love love loveeee you so much. You know the rest. I love you.</p>
+        <h7>Always and forever, <br>
+            your Tracey. </h7>
+
+    </div>
+    <div class="cursor" id="customCursor"></div>
+
+    <script>
+        const img = document.getElementById('draggable');
+        const customCursor = document.getElementById('customCursor');
+        let offsetX, offsetY;
+
+        img.addEventListener('mousedown', function (e) {
+            offsetX = e.clientX - img.getBoundingClientRect().left;
+            offsetY = e.clientY - img.getBoundingClientRect().top;
+
+            img.classList.toggle('border-effect'); // Toggle border effect on click
+            img.style.cursor = 'grabbing'; // Change cursor while dragging
+            document.addEventListener('mousemove', drag);
+            document.addEventListener('mouseup', drop);
+        });
+
+        function drag(e) {
+            img.style.position = 'absolute';
+            img.style.left = (e.clientX - offsetX) + 'px';
+            img.style.top = (e.clientY - offsetY) + 'px';
+            if (e.clientX < offsetX - 50) { // Drag left threshold
+                window.location.href = "vid.html"; // Redirect to vid.html
+            }
+        }
+
+        function drop() {
+            img.style.cursor = 'grab'; // Reset cursor after dragging
+            document.removeEventListener('mousemove', drag);
+            document.removeEventListener('mouseup', drop);
+        }
+
+        document.addEventListener('mousemove', function (e) {
+            customCursor.style.left = e.clientX + 'px';
+            customCursor.style.top = e.clientY + 'px';
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom, #ff77a8, #5a99d8);
+            font-family: 'Times New Roman', Times, serif;
+            cursor: url('img1.jpg'), auto;
+            overflow: hidden;
+        }
+        h4, h5 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        img {
+            width: 500px;
+            transition: transform 0.2s;
+            cursor: grab;
+            border-radius: 15px
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        .cursor {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.8);
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: background-color 0.3s;
+        }
+
+        .border-effect {
+            border: 5px solid transparent;
+            border-image: linear-gradient(to right, #ff77a8, #5a99d8) 1;
+            transition: border 0.3s;
+            box-sizing: border-box;
+        }
